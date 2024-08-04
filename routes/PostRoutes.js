@@ -1,4 +1,6 @@
 const express = require("express");
 const router = express();
 
-router.get("/post")
+const postCtrl = require("../controllers/PostsCtrl");
+
+router.get("/post", postCtrl.getAllPosts)

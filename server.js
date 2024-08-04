@@ -2,9 +2,12 @@ const express = require("express");
 const app = express();
 
 const mongoose = require("mongoose");
-const bodyParset = require("body-parser");
+const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv/config");
+
+app.use(cors());
+app.use(bodyParser.json({limit}))
 
 
 app.get("/", (req, res)=>{

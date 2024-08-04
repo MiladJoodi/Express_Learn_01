@@ -13,7 +13,7 @@
   "main": "server.js",
   "devDependencies": {},
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC"

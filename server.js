@@ -23,5 +23,5 @@ const dbUrl = process.env.MONGO_URL;
 const port = process.env.PORT;
 
 mongoose.connect(dbUrl)
-.then(data => console.log("Yes"))
+.then(data => app.listen(port))
 .catch(err=> console.log("No"))

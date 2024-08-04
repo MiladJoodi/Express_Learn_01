@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
 
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const bodyParset = require("body-parser");
+const cors = require("cors");
+require("dotenv/config");
 
 
 app.get("/", (req, res)=>{

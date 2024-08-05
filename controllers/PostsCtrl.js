@@ -23,7 +23,7 @@ const createPost = async (req, res) => {
         const postData = req.body;
         await Post.create(postData);
         res.status(200).json({ msg: "Post Created" })
-    } catch(e) {
+    } catch (e) {
         console.log(e)
         res.status(400).json({ msg: "Error" })
     }
@@ -49,8 +49,8 @@ const updatePost = async (req, res) => {
 
     try {
         const newData = req.body;
-        await Post.findByIdAndUpdate(req.params.id, newData, {new: true});
-        res.status(200).json(thePost)
+        await Post.findByIdAndUpdate(req.params.id, newData, { new: true });
+        res.status(200).json({ msg: "post updated" })
     } catch {
         res.status(400).json({ msg: "Error" })
     }

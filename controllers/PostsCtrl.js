@@ -5,7 +5,8 @@ const getAllPosts = async (req, res) => {
 
     try {
 
-        const allPosts = await Post.find()
+        const allPosts = await Post.find();
+        allPosts.reverse();
 
         res.status(200).json(allPosts)
     } catch {
@@ -18,14 +19,10 @@ module.exports.getAllPosts = getAllPosts;
 // POST
 const createPost = async (req, res) => {
     try {
-
-        const postData={
-            title: "post 1",
-            viewNum: 4
-        }
-
+        console.log(req.body)
+        const postData = req.body;
         await Post.create(postData);
-        res.status(200).json("Post created")
+        res.status(200).json({ msg: "Post Created" })
     } catch(e) {
         console.log(e)
         res.status(400).json({ msg: "Error" })

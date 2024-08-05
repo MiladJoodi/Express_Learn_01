@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema({
     title: {
-        type: String
+        type: String,
+        required: true
     },
     viewNum: {
         type: Number,
-        required: true,
         default: 0
     },
     date: {

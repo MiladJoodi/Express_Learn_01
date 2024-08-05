@@ -43,3 +43,17 @@ const getOnePost = async (req, res) => {
 
 }
 module.exports.getOnePost = getOnePost;
+
+// UPDATE
+const updatePost = async (req, res) => {
+
+    try {
+        const newData = req.body;
+        await Post.findByIdAndUpdate(req.params.id, newData, {new: true});
+        res.status(200).json(thePost)
+    } catch {
+        res.status(400).json({ msg: "Error" })
+    }
+
+}
+module.exports.updatePost = updatePost;

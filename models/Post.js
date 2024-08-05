@@ -6,6 +6,9 @@ const PostSchema = new mongoose.Schema({
     },
     viewNum: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
-})
+});
+
+module.exports = mongoose.model("Post", PostSchema);

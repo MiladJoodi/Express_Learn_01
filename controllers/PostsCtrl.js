@@ -57,3 +57,16 @@ const updatePost = async (req, res) => {
 
 }
 module.exports.updatePost = updatePost;
+
+// DELETE
+const removePost = async (req, res) => {
+
+    try {
+        await Post.deleteOne({_id: req.params.id});
+        res.status(200).json({ msg: "post Removed" })
+    } catch {
+        res.status(400).json({ msg: "Error" })
+    }
+
+}
+module.exports.removePost = removePost;

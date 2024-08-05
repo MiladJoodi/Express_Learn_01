@@ -9,6 +9,10 @@ const PostSchema = new mongoose.Schema({
         required: true,
         default: 0
     },
+    date: {
+        type: String,
+        default: new Date()
+    }
 });
 
 module.exports = mongoose.model("Post", PostSchema);

@@ -31,3 +31,15 @@ const createPost = async (req, res) => {
 }
 module.exports.createPost = createPost;
 
+// ONE POST
+const getOnePost = async (req, res) => {
+
+    try {
+        // const thePost = await Post.findById(req.body.goalId);
+        res.status(200).json(req.params.id)
+    } catch {
+        res.status(400).json({ msg: "Error" })
+    }
+
+}
+module.exports.getOnePost = getOnePost;

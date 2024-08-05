@@ -35,8 +35,8 @@ module.exports.createPost = createPost;
 const getOnePost = async (req, res) => {
 
     try {
-        // const thePost = await Post.findById(req.body.goalId);
-        res.status(200).json(req.params.id)
+        const thePost = await Post.findById(req.params.id);
+        res.status(200).json(thePost)
     } catch {
         res.status(400).json({ msg: "Error" })
     }

@@ -5,7 +5,7 @@ const getAllPosts = async (req, res) => {
 
     try {
 
-        const allPosts = await Post.find();
+        const allPosts = await Post.find().select({ viewNum: 1, date: 1 }).sort({viewNum: -1});
         allPosts.reverse();
 
         res.status(200).json(allPosts)
@@ -62,7 +62,7 @@ module.exports.updatePost = updatePost;
 const removePost = async (req, res) => {
 
     try {
-        await Post.deleteOne({_id: req.params.id});
+        await Post.deleteOne({ _id: req.params.id });
         res.status(200).json({ msg: "post Removed" })
     } catch {
         res.status(400).json({ msg: "Error" })
